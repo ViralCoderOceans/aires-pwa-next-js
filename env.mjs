@@ -21,6 +21,7 @@ export const env = createEnv({
    * 💡 You'll get type errors if these are not prefixed with NEXT_PUBLIC_.
    */
   client: {
+    NEXT_PUBLIC_ENV: z.boolean(),
     NEXT_PUBLIC_SITE_URL: z.string().url().transform(removeTrailingSlash),
     NEXT_PUBLIC_SERVER_URL: z.string().url().transform(removeTrailingSlash),
   },
@@ -31,6 +32,7 @@ export const env = createEnv({
    * 💡 You'll get type errors if not all variables from `server` & `client` are included here.
    */
   runtimeEnv: {
+    NEXT_PUBLIC_ENV: process.env.NEXT_PUBLIC_ENV,
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
     NEXT_PUBLIC_SERVER_URL: process.env.NEXT_PUBLIC_SERVER_URL,
   },

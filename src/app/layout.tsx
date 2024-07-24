@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../styles/globals.css';
-import MaxWidthWrapper from '@/components/maxWidthWrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -94,7 +93,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body className={inter.className}>
-        <MaxWidthWrapper>{children}</MaxWidthWrapper>
+        {children}
       </body>
     </html>
   );
