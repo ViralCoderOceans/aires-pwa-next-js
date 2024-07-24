@@ -1,8 +1,4 @@
-"use client"
-
-import { useEffect } from "react"
-import TimeAgo from "javascript-time-ago"
-import en from "javascript-time-ago/locale/en.json"
+'use client';
 
 import {
   Toast,
@@ -11,14 +7,12 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from "@/ui/toast"
-import { useToast } from "@/ui/use-toast"
-
-TimeAgo.addDefaultLocale(en)
+} from '@/components/base/ui/toast';
+import { useToast } from '@/components/base/ui/use-toast';
 
 export function Toaster() {
-  const { toasts } = useToast()
-  useEffect(() => {}, [])
+  const { toasts } = useToast();
+
   return (
     <ToastProvider>
       {toasts.map(function ({ id, title, description, action, ...props }) {
@@ -33,9 +27,9 @@ export function Toaster() {
             {action}
             <ToastClose />
           </Toast>
-        )
+        );
       })}
       <ToastViewport />
     </ToastProvider>
-  )
+  );
 }

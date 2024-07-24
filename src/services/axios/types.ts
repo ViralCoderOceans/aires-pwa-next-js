@@ -1,12 +1,12 @@
 export interface IRequestHeader {
   responseType?:
-    | "json"
-    | "arraybuffer"
-    | "blob"
-    | "document"
-    | "text"
-    | "stream"
-  [key: string]: any
+    | 'json'
+    | 'arraybuffer'
+    | 'blob'
+    | 'document'
+    | 'text'
+    | 'stream';
+  [key: string]: any;
 }
 
 // export interface IApiResponse {
@@ -17,14 +17,14 @@ export interface IRequestHeader {
 // }
 
 export interface PaginationResponse<T> {
-  docs: T[]
-  totalDocs: number
-  limit: number
-  totalPages: number
-  page: number
-  pagingCounter: number
-  hasPrevPage: boolean
-  hasNextPage: boolean
-  prevPage: number | null
-  nextPage: number | null
+  docs: T[];
+  totalDocs: number;
+  limit: number;
+  totalPages: number;
+  page: number;
+  pagingCounter: number;
+  hasPrevPage: boolean;
+  hasNextPage: boolean;
+  prevPage: number | null;
+  nextPage: number | null;
 }

@@ -1,17 +1,17 @@
-import { createEnv } from "@t3-oss/env-nextjs"
-import { z } from "zod"
+import { createEnv } from '@t3-oss/env-nextjs';
+import { z } from 'zod';
 
 const removeTrailingSlash = (url) => {
-  const result = url.replace(/\/$/, "")
-  return result
-}
+  const result = url.replace(/\/$/, '');
+  return result;
+};
 
 export const env = createEnv({
   /*
    * ServerSide Environment variables, not available on the client.
    * Will throw if you access these variables on the client.
    */
-  isServer: typeof window === "undefined",
+  isServer: typeof window === 'undefined',
   server: {
     INTERNAL_SECRET_KEY: z.string().min(1),
   },
@@ -35,6 +35,6 @@ export const env = createEnv({
     NEXT_PUBLIC_SERVER_URL: process.env.NEXT_PUBLIC_SERVER_URL,
   },
   onValidationError: (error) => {
-    throw error
+    throw error;
   },
-})
+});

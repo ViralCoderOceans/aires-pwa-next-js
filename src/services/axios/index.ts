@@ -1,31 +1,36 @@
-import { AxiosProgressEvent } from "axios"
+import { AxiosProgressEvent } from 'axios';
 
-import { _delete, get, patch, post, put } from "./base"
-import { IRequestHeader } from "./types"
+import { _delete, get, patch, post, put } from './base';
+import { IRequestHeader } from './types';
 
 interface IApiBase {
-  get(path: string, query: object, headers: IRequestHeader): any
+  get(path: string, query: object, headers: IRequestHeader): any;
   post(
     path: string,
     query: object,
     headers: object,
     data: object,
     isFile: boolean
-  ): any
-  put(path: string, query: object, headers: IRequestHeader, data: object): any
-  patch(path: string, query: object, headers: IRequestHeader, data: object): any
+  ): any;
+  put(path: string, query: object, headers: IRequestHeader, data: object): any;
+  patch(
+    path: string,
+    query: object,
+    headers: IRequestHeader,
+    data: object
+  ): any;
   delete(
     path: string,
     query: object,
     headers: IRequestHeader,
     data: object
-  ): any
+  ): any;
 }
 
 export abstract class ApiController implements IApiBase {
-  protected abstract urlPath: string
+  protected abstract urlPath: string;
   get(path: string, query: object, headers: IRequestHeader = {}) {
-    return get(path, query, headers)
+    return get(path, query, headers);
   }
   post<T>(
     path: string,
@@ -35,13 +40,13 @@ export abstract class ApiController implements IApiBase {
     isFile: boolean = false,
     progress?: (event: AxiosProgressEvent) => void
   ): any {
-    return post<T>(path, query, headers, data, isFile, progress)
+    return post<T>(path, query, headers, data, isFile, progress);
   }
   patch(path: string, query: object, headers: IRequestHeader, data: object) {
-    return patch(path, query, headers, data)
+    return patch(path, query, headers, data);
   }
   put(path: string, query: object, headers: IRequestHeader, data: object) {
-    return put(path, query, headers, data)
+    return put(path, query, headers, data);
   }
   delete(
     path: string,
@@ -49,6 +54,6 @@ export abstract class ApiController implements IApiBase {
     headers: IRequestHeader,
     data: object = {}
   ) {
-    return _delete(path, query, headers, data)
+    return _delete(path, query, headers, data);
   }
 }

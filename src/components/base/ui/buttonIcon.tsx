@@ -1,11 +1,11 @@
-import React from "react"
+import React from 'react';
 
-import { Button, ButtonProps } from "@/ui/button"
+import { Button, ButtonProps } from '@/ui/button';
 
 interface IProps extends ButtonProps {
-  icon: React.ReactElement
-  size: ButtonProps["size"]
-  variant?: ButtonProps["variant"]
+  icon: React.ReactElement;
+  size: ButtonProps['size'];
+  variant?: ButtonProps['variant'];
 }
 
 export default function IconButton(props: IProps) {
@@ -15,5 +15,5 @@ export default function IconButton(props: IProps) {
       disabled={props.progress}
       {...props}
     />
-  )
+  );
 }
