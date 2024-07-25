@@ -1,9 +1,9 @@
-import { ChevronDown } from 'lucide-react';
 import React from 'react';
+import { ChevronDown } from 'lucide-react';
 
 const Header = () => {
   return (
-    <div className="w-full px-4 pt-4 pb-10 bg-[#17374e] flex-col justify-center items-start gap-4 inline-flex">
+    <div className="w-full px-4 pt-4 pb-5 bg-[#17374e] flex-col justify-center items-start gap-4 inline-flex">
       <div className="self-stretch justify-between items-center inline-flex">
         <div className="justify-start items-center gap-3 flex">
           <div className="w-12 h-12 bg-white rounded-lg" />
@@ -27,9 +27,10 @@ const Header = () => {
             className="w-6 h-6 relative"
             src="/assets/icons/magnifyingGlass.svg"
           />
-          <div className="text-white text-sm font-medium leading-tight">
-            Jump to or search...
-          </div>
+          <input
+            className="text-white text-base font-medium leading-tight bg-transparent focus:outline-none placeholder:text-white"
+            placeholder="Jump to or search..."
+          />
         </div>
       </div>
     </div>
