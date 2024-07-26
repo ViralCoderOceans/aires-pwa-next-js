@@ -150,9 +150,175 @@ const DUMMY_LEADS = [
     role: 'Agent',
     leadSource: 'Unknown',
   },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
+  {
+    firstName: 'Anthony',
+    lastName: 'Rogers',
+    date: '2024-07-16',
+    role: 'Agent',
+    leadSource: 'Unknown',
+  },
 ];
 
 const DUMMY_ACTIVITIES = [
+  {
+    count: 9,
+    title: 'Tasks',
+  },
+  {
+    count: 21,
+    title: 'Calls',
+  },
+  {
+    count: 7,
+    title: 'Emails',
+  },
+  {
+    count: 0,
+    title: 'Meetings',
+  },
+  {
+    count: 0,
+    title: 'Meetings',
+  },
+  {
+    count: 9,
+    title: 'Tasks',
+  },
+  {
+    count: 21,
+    title: 'Calls',
+  },
+  {
+    count: 7,
+    title: 'Emails',
+  },
+  {
+    count: 0,
+    title: 'Meetings',
+  },
+  {
+    count: 0,
+    title: 'Meetings',
+  },
   {
     count: 9,
     title: 'Tasks',
@@ -210,8 +376,8 @@ export default function Home() {
             View all tasks
           </Button>
         </div>
-        <div className="mt-4">
-          <div className="flex justify-between items-center mb-4">
+        <div className="mt-4 flex flex-col gap-8">
+          <div className="flex justify-between items-center">
             <Heading text="Team pipeline" />
             <div className="w-36 px-3 py-2.5 bg-white rounded-md border border-zinc-200 flex justify-between items-center cursor-pointer">
               <div className="text-zinc-900 text-sm font-medium leading-tight">
@@ -230,7 +396,7 @@ export default function Home() {
           isHideOverlay
           isHideCloseIcon
         >
-          <div className="w-full flex flex-col gap-4">
+          <div className="w-full h-full flex flex-col gap-4 overflow-hidden">
             <div className="flex items-center gap-2">
               <img
                 className="w-6 h-6 rotate-180 cursor-pointer"
@@ -253,7 +419,7 @@ export default function Home() {
                 </TabsTrigger>
               </TabsList>
             </Tabs>
-            <div>
+            <div className="flex-1 flex flex-col overflow-y-auto">
               {DUMMY_LEADS.map((lead, index) => (
                 <div
                   key={index}

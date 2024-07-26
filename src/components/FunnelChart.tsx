@@ -13,7 +13,7 @@ const data = [
   { name: 'Contacts', value: 525, extra: '+23 this week' },
   { name: 'Prospects', value: 390 },
   { name: 'Reservations', value: 290 },
-  { name: 'On hold - recession', value: 125 },
+  { name: 'On hold recession', value: 125 },
   { name: 'Sold Firm', value: 100 },
 ];
 
@@ -22,8 +22,8 @@ const COLORS = ['#E8EBED', '#D0D6DB', '#A3AEB8', '#50697A', '#17364F'];
 const CustomFunnelChart = () => {
   return (
     <div className="w-full relative flex items-center bg-white">
-      <div className="z-[100] absolute top-[-8px] left-0 h-full w-full">
-        <ResponsiveContainer width="70%" height={400}>
+      <div className="z-[10] absolute top-[-8px] left-0 h-full w-full">
+        <ResponsiveContainer width="66%" height={400}>
           <FunnelChart>
             <Tooltip
               content={<CustomTooltip active={false} payload={undefined} />}
@@ -48,7 +48,7 @@ const CustomFunnelChart = () => {
             key={index}
             className="relative h-[75px] w-full flex items-center justify-end"
           >
-            <div className="w-[130px] flex flex-col gap-1">
+            <div className="w-[140px] flex flex-col gap-1">
               <div className="text-zinc-500 text-base font-normal leading-none">
                 {entry.name}
               </div>
