@@ -1,4 +1,3 @@
-/* eslint-disable */
 'use client';
 
 import * as React from 'react';
@@ -42,6 +41,8 @@ const ChartContainer = React.forwardRef<
     children: React.ComponentProps<
       typeof RechartsPrimitive.ResponsiveContainer
     >['children'];
+    id: string;
+    className?: string;
   }
 >(({ id, className, children, config, ...props }, ref) => {
   const uniqueId = React.useId();
@@ -70,7 +71,7 @@ ChartContainer.displayName = 'Chart';
 
 const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
   const colorConfig = Object.entries(config).filter(
-    ([_, config]) => config.theme || config.color
+    (config) => config[1].theme || config[1].color
   );
 
   if (!colorConfig.length) {
@@ -112,11 +113,19 @@ const ChartTooltipContent = React.forwardRef<
       indicator?: 'line' | 'dot' | 'dashed';
       nameKey?: string;
       labelKey?: string;
+      active?: boolean;
+      payload?: string;
+      label?: string;
+      labelFormatter?: () => void;
+      formatter?: () => void;
+      labelClassName?: string;
+      color?: string;
+      className?: string;
     }
 >(
   (
     {
-      active,
+      active = false,
       payload,
       className,
       indicator = 'dot',
@@ -265,6 +274,7 @@ const ChartLegendContent = React.forwardRef<
     Pick<RechartsPrimitive.LegendProps, 'payload' | 'verticalAlign'> & {
       hideIcon?: boolean;
       nameKey?: string;
+      className?: string;
     }
 >(
   (

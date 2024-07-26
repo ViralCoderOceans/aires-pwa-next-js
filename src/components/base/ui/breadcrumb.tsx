@@ -1,4 +1,3 @@
-/* eslint-disable */
 import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { ChevronRight, MoreHorizontal } from 'lucide-react';
@@ -15,7 +14,9 @@ Breadcrumb.displayName = 'Breadcrumb';
 
 const BreadcrumbList = React.forwardRef<
   HTMLOListElement,
-  React.ComponentPropsWithoutRef<'ol'>
+  React.ComponentPropsWithoutRef<'ol'> & {
+    className?: string;
+  }
 >(({ className, ...props }, ref) => (
   <ol
     ref={ref}
@@ -30,7 +31,9 @@ BreadcrumbList.displayName = 'BreadcrumbList';
 
 const BreadcrumbItem = React.forwardRef<
   HTMLLIElement,
-  React.ComponentPropsWithoutRef<'li'>
+  React.ComponentPropsWithoutRef<'li'> & {
+    className?: string;
+  }
 >(({ className, ...props }, ref) => (
   <li
     ref={ref}
@@ -43,6 +46,7 @@ BreadcrumbItem.displayName = 'BreadcrumbItem';
 const BreadcrumbLink = React.forwardRef<
   HTMLAnchorElement,
   React.ComponentPropsWithoutRef<'a'> & {
+    className?: string;
     asChild?: boolean;
   }
 >(({ asChild, className, ...props }, ref) => {
@@ -60,7 +64,9 @@ BreadcrumbLink.displayName = 'BreadcrumbLink';
 
 const BreadcrumbPage = React.forwardRef<
   HTMLSpanElement,
-  React.ComponentPropsWithoutRef<'span'>
+  React.ComponentPropsWithoutRef<'span'> & {
+    className?: string;
+  }
 >(({ className, ...props }, ref) => (
   <span
     ref={ref}
@@ -77,7 +83,9 @@ const BreadcrumbSeparator = ({
   children,
   className,
   ...props
-}: React.ComponentProps<'li'>) => (
+}: React.ComponentProps<'li'> & {
+  className?: string;
+}) => (
   <li
     role="presentation"
     aria-hidden="true"
@@ -92,7 +100,9 @@ BreadcrumbSeparator.displayName = 'BreadcrumbSeparator';
 const BreadcrumbEllipsis = ({
   className,
   ...props
-}: React.ComponentProps<'span'>) => (
+}: React.ComponentProps<'span'> & {
+  className?: string;
+}) => (
   <span
     role="presentation"
     aria-hidden="true"
