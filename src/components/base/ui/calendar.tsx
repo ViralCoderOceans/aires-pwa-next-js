@@ -1,4 +1,3 @@
-/* eslint-disable */
 'use client';
 
 import * as React from 'react';
@@ -15,7 +14,13 @@ function Calendar({
   classNames,
   showOutsideDays = true,
   ...props
-}: CalendarProps) {
+}: CalendarProps & {
+  className?: string;
+  classNames?: {
+    [key: string]: string;
+  };
+  showOutsideDays?: boolean;
+}) {
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
@@ -55,8 +60,8 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />,
+        IconLeft: () => <ChevronLeft className="h-4 w-4" />,
+        IconRight: () => <ChevronRight className="h-4 w-4" />,
       }}
       {...props}
     />

@@ -1,4 +1,3 @@
-/* eslint-disable */
 'use client';
 
 import * as React from 'react';
@@ -12,7 +11,11 @@ const HoverCardTrigger = HoverCardPrimitive.Trigger;
 
 const HoverCardContent = React.forwardRef<
   React.ElementRef<typeof HoverCardPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof HoverCardPrimitive.Content>
+  React.ComponentPropsWithoutRef<typeof HoverCardPrimitive.Content> & {
+    align?: string;
+    sideOffset?: number;
+    className?: string;
+  }
 >(({ className, align = 'center', sideOffset = 4, ...props }, ref) => (
   <HoverCardPrimitive.Content
     ref={ref}
