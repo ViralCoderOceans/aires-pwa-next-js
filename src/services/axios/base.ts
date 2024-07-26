@@ -1,3 +1,5 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+/* eslint-disable  @typescript-eslint/ban-types */
 import axios, { AxiosProgressEvent, AxiosResponse } from 'axios';
 import CryptoJS from 'crypto-js';
 import { env } from 'env.mjs';

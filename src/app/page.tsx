@@ -31,7 +31,7 @@ const Card = ({
     className="col-span-1 p-4 bg-white rounded-lg border border-zinc-200 flex justify-center items-center gap-3 cursor-pointer"
     onClick={onClick}
   >
-    <img className="w-6 h-6" src={iconSrc} />
+    <img className="w-6 h-6" src={iconSrc} alt={title} />
     <div className="flex-1 flex flex-col justify-start items-start">
       <div className="text-sm font-semibold leading-tight">{title}</div>
       <div
@@ -63,7 +63,7 @@ const TaskItem = ({
     )}
   >
     <div className="flex-1 flex justify-start items-center gap-2">
-      <img className="w-4 h-4" src={task.iconSrc} />
+      <img className="w-4 h-4" src={task.iconSrc} alt={task.title} />
       <div className="flex flex-col justify-center items-start gap-1">
         <div className="text-zinc-900 text-sm font-normal leading-tight">
           {task.title}
@@ -74,7 +74,7 @@ const TaskItem = ({
       {task.isAlert && (
         <div className="h-2.5 w-2.5 rounded-full bg-[#F1512D]" />
       )}
-      <img className="w-6 h-6" src="/assets/icons/arrowRight.svg" />
+      <img className="w-6 h-6" src="/assets/icons/arrowRight.svg" alt="alert" />
     </div>
   </div>
 );
@@ -233,6 +233,7 @@ export default function Home() {
                 className="w-6 h-6 rotate-180 cursor-pointer"
                 src="/assets/icons/arrowRight.svg"
                 onClick={() => setIsLeadsDrawerOpen(false)}
+                alt="arrow right"
               />
               <Heading text="Your new leads (6)" />
             </div>
@@ -304,6 +305,7 @@ export default function Home() {
                 className="w-6 h-6 rotate-180 cursor-pointer"
                 src="/assets/icons/arrowRight.svg"
                 onClick={() => setIsWeeklyGoalDrawerOpen(false)}
+                alt="arrow right"
               />
               <div>
                 <Heading text="Weekly Stats" />

@@ -1,6 +1,13 @@
+import React, { ReactNode } from 'react';
 import Link from 'next/link';
-
 import { cn } from '@/lib/utils';
+
+interface MdxCardProps extends Record<string, unknown> {
+  href?: string;
+  className?: string;
+  children: ReactNode;
+  disabled?: boolean;
+}
 
 export function MdxCard({
   href,
@@ -8,7 +15,7 @@ export function MdxCard({
   children,
   disabled,
   ...props
-}: any) {
+}: MdxCardProps) {
   return (
     <div
       className={cn(

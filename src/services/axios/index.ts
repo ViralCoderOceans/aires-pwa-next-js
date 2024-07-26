@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import { AxiosProgressEvent } from 'axios';
 
 import { _delete, get, patch, post, put } from './base';

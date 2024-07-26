@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import { IResult } from 'ua-parser-js';
 
 import { IAuthSupportedMethod } from '../auth/auth.service';
