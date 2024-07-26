@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { ChevronDown } from 'lucide-react';
 import AnimatedDrawer from '@/components/base/AnimatedDrawer';
 import { Tabs, TabsList, TabsTrigger } from '@/components/base/ui/tabs';
+import FunnelChart from '@/components/FunnelChart';
 
 const Heading = ({ text }: { text: string }) => (
   <div className="text-zinc-900 text-lg font-semibold leading-[30px]">
@@ -219,7 +220,9 @@ export default function Home() {
               <ChevronDown className="w-4 h-4 text-[#94A3B8]" />
             </div>
           </div>
-          <div>Chart-pending</div>
+          <div className="w-full bg-white">
+            <FunnelChart />
+          </div>
         </div>
         <AnimatedDrawer
           open={isLeadsDrawerOpen}
