@@ -1,6 +1,10 @@
+import React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../styles/globals.css';
+import ReduxProvider from '@/components/providers/ReduxProvider';
+import BottomNavigationBar from '@/components/BottomNavigationBar';
+import DeviceCheckerWrapper from '@/components/DesktopScreenNotAllowed';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -92,7 +96,16 @@ export default function RootLayout({
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ReduxProvider>
+          <DeviceCheckerWrapper>
+            <div className="w-full h-dvh flex flex-col">
+              <div className="w-full flex-1 overflow-hidden">{children}</div>
+              <BottomNavigationBar />
+            </div>
+          </DeviceCheckerWrapper>
+        </ReduxProvider>
+      </body>
     </html>
   );
 }

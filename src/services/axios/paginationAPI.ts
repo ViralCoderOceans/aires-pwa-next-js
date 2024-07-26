@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import { ApiController } from '.';
 import { PaginationResponse } from './types';
 
