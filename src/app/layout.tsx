@@ -95,6 +95,8 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
+        {/* <script src="js/noBounce.js" type="text/javascript"></script> */}
+        <script src="inobounce.js"></script>
       </head>
       <body className={inter.className}>
         <ReduxProvider>

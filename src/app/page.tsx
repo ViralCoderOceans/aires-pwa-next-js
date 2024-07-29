@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { ChevronDown } from 'lucide-react';
 import AnimatedDrawer from '@/components/base/AnimatedDrawer';
 import { Tabs, TabsList, TabsTrigger } from '@/components/base/ui/tabs';
+import FunnelChart from '@/components/FunnelChart';
 
 const Heading = ({ text }: { text: string }) => (
   <div className="text-zinc-900 text-lg font-semibold leading-[30px]">
@@ -108,11 +109,18 @@ const DEMO_TASKS = [
 
 const DUMMY_LEADS = [
   {
-    firstName: 'Anthony',
-    lastName: 'Rogers',
-    date: '2024-07-16',
+    firstName: 'Sasha',
+    lastName: 'Coen',
+    date: '9:50 AM',
     role: 'Agent',
-    leadSource: 'Unknown',
+    leadSource: 'Presentation house kiosk',
+  },
+  {
+    firstName: 'Nicholas',
+    lastName: 'Frederik',
+    date: '6:50 AM',
+    role: 'Agent',
+    leadSource: 'www.sequoia.com',
   },
   {
     firstName: 'Anthony',
@@ -122,32 +130,25 @@ const DUMMY_LEADS = [
     leadSource: 'Unknown',
   },
   {
-    firstName: 'Anthony',
-    lastName: 'Rogers',
+    firstName: 'Meredith',
+    lastName: 'Jemison',
     date: '2024-07-16',
     role: 'Agent',
     leadSource: 'Unknown',
   },
   {
-    firstName: 'Anthony',
-    lastName: 'Rogers',
+    firstName: 'David Anders',
+    lastName: 'Stevens',
     date: '2024-07-16',
-    role: 'Agent',
-    leadSource: 'Unknown',
+    role: 'Buyer · Not represented',
+    leadSource: 'Referral',
   },
   {
-    firstName: 'Anthony',
-    lastName: 'Rogers',
+    firstName: 'Umar',
+    lastName: 'Riddle',
     date: '2024-07-16',
-    role: 'Agent',
-    leadSource: 'Unknown',
-  },
-  {
-    firstName: 'Anthony',
-    lastName: 'Rogers',
-    date: '2024-07-16',
-    role: 'Agent',
-    leadSource: 'Unknown',
+    role: 'Buyer · Not represented',
+    leadSource: 'www.sequoia.com',
   },
 ];
 
@@ -170,7 +171,7 @@ const DUMMY_ACTIVITIES = [
   },
   {
     count: 0,
-    title: 'Meetings',
+    title: 'PC Appointments',
   },
 ];
 
@@ -209,8 +210,8 @@ export default function Home() {
             View all tasks
           </Button>
         </div>
-        <div className="mt-4">
-          <div className="flex justify-between items-center mb-4">
+        <div className="mt-4 flex flex-col gap-8">
+          <div className="flex justify-between items-center">
             <Heading text="Team pipeline" />
             <div className="w-36 px-3 py-2.5 bg-white rounded-md border border-zinc-200 flex justify-between items-center cursor-pointer">
               <div className="text-zinc-900 text-sm font-medium leading-tight">
@@ -219,7 +220,9 @@ export default function Home() {
               <ChevronDown className="w-4 h-4 text-[#94A3B8]" />
             </div>
           </div>
-          <div>Chart-pending</div>
+          <div className="w-full bg-white">
+            <FunnelChart />
+          </div>
         </div>
         <AnimatedDrawer
           open={isLeadsDrawerOpen}
@@ -227,7 +230,7 @@ export default function Home() {
           isHideOverlay
           isHideCloseIcon
         >
-          <div className="w-full flex flex-col gap-4">
+          <div className="w-full h-full flex flex-col gap-4 overflow-hidden">
             <div className="flex items-center gap-2">
               <img
                 className="w-6 h-6 rotate-180 cursor-pointer"
@@ -250,7 +253,7 @@ export default function Home() {
                 </TabsTrigger>
               </TabsList>
             </Tabs>
-            <div>
+            <div className="flex-1 flex flex-col overflow-y-auto">
               {DUMMY_LEADS.map((lead, index) => (
                 <div
                   key={index}
@@ -260,8 +263,8 @@ export default function Home() {
                   )}
                 >
                   <div className="justify-start items-center gap-2 flex">
-                    <div className="p-2 bg-zinc-900 rounded-[48px] flex flex-col justify-center items-center gap-2">
-                      <div className="text-gray-100 text-sm font-semibold leading-tight uppercase">
+                    <div className="h-9 w-9 bg-zinc-900 rounded-[48px] flex flex-col justify-center items-center gap-2">
+                      <div className="text-gray-100 text-[13px] font-semibold leading-tight uppercase">
                         {lead.firstName[0]}
                         {lead.lastName[0]}
                       </div>
@@ -336,7 +339,7 @@ export default function Home() {
                 <div className="flex flex-col">
                   <div className="p-2 justify-between items-center inline-flex">
                     <div className="h-9 w-[80%] bg-zinc-200 rounded-[100px] justify-start items-center gap-2 flex">
-                      <div className="h-9 p-2 bg-zinc-900 rounded-[48px] flex-col justify-center items-center gap-2 inline-flex">
+                      <div className="h-9 w-9 p-2 bg-zinc-900 rounded-[48px] flex-col justify-center items-center gap-2 inline-flex">
                         <div className="text-gray-100 text-sm font-semibold leading-tight">
                           SC
                         </div>
@@ -356,43 +359,43 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="p-2 justify-between items-center inline-flex">
-                    <div className="h-9 w-[70%] bg-zinc-200 rounded-[100px] justify-start items-center gap-2 flex">
-                      <div className="h-9 p-2 bg-zinc-900 rounded-[48px] flex-col justify-center items-center gap-2 inline-flex">
-                        <div className="text-gray-100 text-sm font-semibold leading-tight">
-                          SC
+                    <div className="h-9 w-[70%] bg-zinc-900 rounded-[100px] justify-start items-center gap-2 flex">
+                      <div className="h-9 w-9 bg-zinc-100 rounded-[48px] flex-col justify-center items-center gap-2 inline-flex">
+                        <div className="text-zinc-900 text-sm font-semibold leading-tight">
+                          Y
                         </div>
                       </div>
                       <div className="flex-col justify-center items-start inline-flex">
-                        <div className="text-zinc-950 text-sm font-semibold leading-tight">
-                          Sasha Coen
+                        <div className="text-white text-sm font-semibold leading-tight">
+                          You
                         </div>
                       </div>
                     </div>
                     <div className="justify-start items-center gap-2 flex">
                       <div className="flex-col justify-center items-end inline-flex">
                         <div className="text-zinc-500 text-xs font-normal leading-none">
-                          21
+                          16
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="p-2 justify-between items-center inline-flex">
                     <div className="h-9 w-[60%] bg-zinc-200 rounded-[100px] justify-start items-center gap-2 flex">
-                      <div className="h-9 p-2 bg-zinc-900 rounded-[48px] flex-col justify-center items-center gap-2 inline-flex">
+                      <div className="h-9 w-9 p-2 bg-zinc-900 rounded-[48px] flex-col justify-center items-center gap-2 inline-flex">
                         <div className="text-gray-100 text-sm font-semibold leading-tight">
-                          SC
+                          AR
                         </div>
                       </div>
                       <div className="flex-col justify-center items-start inline-flex">
                         <div className="text-zinc-950 text-sm font-semibold leading-tight">
-                          Sasha Coen
+                          Anthony Rogers
                         </div>
                       </div>
                     </div>
                     <div className="justify-start items-center gap-2 flex">
                       <div className="flex-col justify-center items-end inline-flex">
                         <div className="text-zinc-500 text-xs font-normal leading-none">
-                          21
+                          12
                         </div>
                       </div>
                     </div>
@@ -407,7 +410,7 @@ export default function Home() {
                   {DUMMY_ACTIVITIES.map((activity, index) => (
                     <div
                       key={index}
-                      className="col-span-1 h-[72px] p-2 bg-zinc-100 rounded-lg flex flex-col justify-center items-start gap-1"
+                      className="col-span-1 h-[72px] p-2 bg-zinc-100 rounded-lg flex flex-col justify-center items-start gap-1.5"
                     >
                       <div className="text-zinc-900 text-sm font-semibold leading-tight">
                         {activity.count}

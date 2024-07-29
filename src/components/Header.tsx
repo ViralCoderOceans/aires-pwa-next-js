@@ -6,7 +6,9 @@ const Header = () => {
     <div className="w-full px-4 pt-4 pb-5 bg-[#17374e] flex-col justify-center items-start gap-4 inline-flex">
       <div className="self-stretch justify-between items-center inline-flex">
         <div className="justify-start items-center gap-3 flex">
-          <div className="w-12 h-12 bg-white rounded-lg" />
+          <div className="w-12 h-12 bg-white rounded-lg flex justify-center items-center">
+            <img src="/assets/images/project-icon.png" />
+          </div>
           <div className="flex-col justify-start items-start gap-0.5 inline-flex">
             <div className="text-gray-100 text-lg font-semibold leading-[30px]">
               Sequoia
