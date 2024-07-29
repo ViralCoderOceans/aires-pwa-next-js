@@ -12,9 +12,9 @@ import {
 const data = [
   { name: 'Contacts', value: 525, extra: '+23 this week' },
   { name: 'Prospects', value: 390 },
-  { name: 'Reservations', value: 290 },
-  { name: 'On hold recession', value: 125 },
-  { name: 'Sold Firm', value: 100 },
+  { name: 'Reservations', value: 60 },
+  { name: 'On hold recession', value: 25 },
+  { name: 'Sold Firm', value: 20 },
 ];
 
 const COLORS = ['#E8EBED', '#D0D6DB', '#A3AEB8', '#50697A', '#17364F'];
@@ -34,8 +34,8 @@ const CustomFunnelChart = () => {
                 <Cell
                   key={`cell-${index}`}
                   fill={COLORS[index % COLORS.length]}
-                  stroke="#F5F5F5"
-                  strokeWidth={10}
+                  // stroke="#F5F5F5"
+                  // strokeWidth={10}
                 />
               ))}
             </Funnel>
@@ -57,7 +57,7 @@ const CustomFunnelChart = () => {
                   {entry.value}
                 </div>
                 {entry.extra && (
-                  <div className="bg-green-100 text-green-700 text-xs p-1 rounded-md">
+                  <div className="bg-[#059669]/[25%] text-[#047857] text-xs font-medium p-1 rounded-md">
                     {entry.extra}
                   </div>
                 )}
